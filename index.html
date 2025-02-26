@@ -10,14 +10,12 @@
     <title>KB</title>
 </head>
 <body>
-    <!-- Header-->
+    <!-- Header -->
     <header class="header">
         <a href="#" class="logo">KHALID BOUYCHOU</a>
         <i class="fa-solid fa-bars" id="menu-icon"></i>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -25,20 +23,20 @@
     <!-- home section-->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hi , <span>Myself </span></h3>
-            <h1>Khalid Bouychou</h1>
-            <h3>And I'm a <span> Web Developer </span> </h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus, impedit nobis earum repellat consequuntur in,
-                accusantium, a ratione minima voluptatem? Rem nulla nostrum iure culpa veniam provident quos perspiciatis!
+            <h3>Hi , <span>there </span></h3>
+            <h1>I am Khalid Bouychou</h1>
+            <h3>And I'm  <span> Full stack 👨‍💻 </span> </h3>
+            <p> 
+                Software developer student at 1337-UM6P, passionate about web development and
+                currently working on a team SPA project. Skilled in programming and collaboration, I am
+                seeking a job opportunity or internship to gain industry experience
             </p>
             <div class="socila-media">
-                <a href="#linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#github"><i class="fa-brands fa-github"></i></a>
-                <a href="#medium"><i class="fa-brands fa-medium"></i></a>
-                <a href="#medium"><i class="fa-brands fa-medium"></i></a>
+                <a href="https://www.linkedin.com/in/khalidbouychou/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/khalidbouychou"><i class="fa-brands fa-github"></i></a>
+                <a href="https://medium.com/@khbouych"><i class="fa-brands fa-medium"></i></a>
             </div>
-            <a href="#" class="btn">Resume</a>
+            <a href="resume/full-stack.pdf" class="btn">Resume</a>
         </div>
         <div class="home-img">
             <img src="images/me.png" alt="khalid bouychou">
@@ -46,32 +44,68 @@
 
     </section>
 
-    <!-- about section-->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/me.png" alt="khalid bouychou">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span> </h2>
-            <h3>Frontend Developer</h3>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia porro autem
-                id quibusdam optio obcaecati, facere necessitatibus incidunt quam dicta deleniti. Provident, nobis a earum repellendus voluptates consequuntur quia reiciendis.
-            </p>
-            <a href="#" class="btn">Read more</a>
-        </div>
-    </section>
+    <!-- portfolio section-->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Projects</span> </h2>
+        <div class="portfolio-container">
+            <div class="portfilio-box">
+                <img src="images/pong.jpeg" alt="ft_trancendance">
+                <div class="portfolio-layer">
+                    <h4>PongyGame(Fullstack web app)</h4>
+                    <p>
+                        Transcendence is a 42 school project, to learn about web developpement and SPA. The goal is to create a web app to play Pong, and socialize with other users
+                    </p>
+                    <a href="https://github.com/khalidbouychou/ft_trancendance1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
 
-    <!-- services section-->
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span> </h2>
-        <div class="services-container">
-            <div class="services-box">
+                </div>
+            </div>
+
+                <div class="portfilio-box">
+                    <img src="images/irc.jpeg" alt="ft_irc">
+                    <div class="portfolio-layer">
+                        <h4>IRC</h4>
+                        <p>
+                            The ft_irc project by 1337 School is an interesting undertaking exploring computer networking and communication protocols. As a part of the 1337 School curriculum, the project aims to challenge students to develop an IRC (Internet Relay Chat) server from scratch using C++
+                        </p>
+                        <a href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+                </div>
+                </div>
+
+                <div class="portfilio-box">
+                    <img src="images/inception.png" alt="ft_irc">
+                    <div class="portfolio-layer">
+                        <h4>Inception</h4>
+                        <p>
+                            This is complete guide of inception project on this page you gonna learn what is docker container and what used for and why we
+                            need it and also learn how to use docker images and also create your own docker image from scratch
+                        </p>
+                        <a href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+
+                </div>
+                </div>
 
             </div>
         </div>
-
     </section>
+
+    <!-- Contact section-->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span> </h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+            </div>
+
+            <div class="input-box">
+                <input type="number" placeholder="Phone Number">
+                <input type="text" placeholder="Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required=""></textarea> 
+            <input type="submit" value="Send Message" class="btn">            
+        </form>
+    </section>"
+
 <script src="main.js"></script>
 </body>
 </html>

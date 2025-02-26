@@ -27,7 +27,6 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-   
 }
 
 section {
@@ -44,7 +43,7 @@ span {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: var(--bg-color);
+    background: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,17 +56,42 @@ span {
     font-weight: 700;
     cursor: default;
 }
+/* Navbar links styling */
+.navbar {
+    display: flex;
+}
 
 .navbar a {
     font-size: 1.5rem;
     color : var(--text-color);
     margin-left: 4rem;
     font-weight: 700;
+    position: relative;
+    padding-bottom: 5px; /* Add some padding at the bottom for the line */
+    transition: .5s ease;
 }
 
-.navbar a:hover , .navbar a:active{
+/* Animated underline effect using pseudo-element */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease; /* Transition for width */
+}
 
+/* On hover, animate the underline */
+.navbar a:hover::after {
+    width: 100%; /* Expand the underline */
+}
+
+/* Hover and active state */
+.navbar a:hover, .navbar a:active {
     color : var(--text-color);
+    border-bottom: 2px solid white; /* Add border-bottom during hover */
 }
 
 #menu-icon {
@@ -81,6 +105,7 @@ span {
     justify-content: center;
     align-items: center;
     color: var(--text-color);
+    background: image("images/me.png");
 }
 
 .home-content h3 {
@@ -188,4 +213,117 @@ span {
 .about-content p{
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+}
+
+.portfolio{
+    background: var(--snd-bf-color);
+}
+
+.portfolio h2{
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.portfolio-container .portfilio-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow:  0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfilio-box img {
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0.7;
+}
+.portfilio-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfilio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.1),var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.portfilio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+.portfolio-layer a i {
+    font-size: 2rem;
+    color: var(--snd-bf-color);
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin : 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.contact form .input-box {
+    display:  flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box input , .contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--snd-bf-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
 }
