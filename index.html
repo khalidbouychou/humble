@@ -12,11 +12,12 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="#" class="logo">KHALID BOUYCHOU</a>
+        <a href="#" class="logo">khbouych</a>
         <i class="fa-solid fa-bars" id="menu-icon"></i>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#portfolio">Projects</a>
+            <a href="#portfolio">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -25,16 +26,17 @@
         <div class="home-content">
             <h3>Hi , <span>there </span></h3>
             <h1>I am Khalid Bouychou</h1>
-            <h3>And I'm  <span> Full stack 👨‍💻 </span> </h3>
+            <h3>And I'm  <span class="multiple-text"> Software Developer </span> </h3>
             <p> 
-                Software developer student at 1337-UM6P, passionate about web development and
-                currently working on a team SPA project. Skilled in programming and collaboration, I am
-                seeking a job opportunity or internship to gain industry experience
+                at 1337-UM6P, <br>passionate about web development
+                Skilled in programming and collaboration, I am seeking a job opportunity <br>
+                or internship to gain industry experience
             </p>
             <div class="socila-media">
-                <a href="https://www.linkedin.com/in/khalidbouychou/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/khalidbouychou"><i class="fa-brands fa-github"></i></a>
-                <a href="https://medium.com/@khbouych"><i class="fa-brands fa-medium"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/khalidbouychou/"><i class="fa-brands fa-linkedin"></i></a>
+                <a target="_blank" href="https://github.com/khalidbouychou"><i class="fa-brands fa-github"></i></a>
+                <a target="_blank" href="https://medium.com/@khbouych"><i class="fa-brands fa-medium"></i></a>
+                <a target="_blank" href="https://www.upwork.com/freelancers/~0115a1e88250e486bd"><i class="fa-brands fa-upwork"></i></a>
             </div>
             <a href="resume/full-stack.pdf" class="btn">Resume</a>
         </div>
@@ -46,17 +48,19 @@
 
     <!-- portfolio section-->
     <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span> </h2>
+        <h2 class="heading"><span>Projects</span> </h2>
         <div class="portfolio-container">
             <div class="portfilio-box">
-                <img src="images/pong.jpeg" alt="ft_trancendance">
+                <img src="images/pong.webp" alt="ft_trancendance">
                 <div class="portfolio-layer">
                     <h4>PongyGame(Fullstack web app)</h4>
                     <p>
                         Transcendence is a 42 school project, to learn about web developpement and SPA. The goal is to create a web app to play Pong, and socialize with other users
                     </p>
-                    <a href="https://github.com/khalidbouychou/ft_trancendance1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
-
+                    <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
+                        Technologies :  Docker , Reactjs , Css , Django , Python
+                    </p>
+                    <a target="_blank" href="https://github.com/khalidbouychou/ft_trancendance1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
                 </div>
             </div>
 
@@ -66,8 +70,12 @@
                         <h4>IRC</h4>
                         <p>
                             The ft_irc project by 1337 School is an interesting undertaking exploring computer networking and communication protocols. As a part of the 1337 School curriculum, the project aims to challenge students to develop an IRC (Internet Relay Chat) server from scratch using C++
+                            
                         </p>
-                        <a href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
+                            Technologies :  C++ , Socket
+                        </p>
+                        <a target="_blank" href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
                 </div>
                 </div>
 
@@ -78,9 +86,44 @@
                         <p>
                             This is complete guide of inception project on this page you gonna learn what is docker container and what used for and why we
                             need it and also learn how to use docker images and also create your own docker image from scratch
+                            
                         </p>
-                        <a href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
+                            Technologies :  Docker , Shell , PHP
+                        </p>
+                        <a target="_blank" href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
 
+                </div>
+                </div>
+
+                <div class="portfilio-box">
+                    <img src="images/cube.d.png" alt="cub3d">
+                    <div class="portfolio-layer">
+                        <h4>CUB3D</h4>
+                        <p>
+                            A 3D maze game built using raycasting, allowing players to navigate through a maze and collect items to win the game.
+                           
+                        </p>
+                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
+                            Technologies :  C , Raycasting
+                        </p>
+                        <a target="_blank" href="https://github.com/khalidbouychou/Cub3d"  class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+
+                </div>
+                </div>
+
+                <div class="portfilio-box">
+                    <img src="images/portfolioo.png" alt="cub3d">
+                    <div class="portfolio-layer">
+                        <h4>Portfolio</h4>
+                        <p>
+                            A personal portfolio showcasing my work as a Software developer.
+                        </p>
+                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
+                            Technologies :  HTML5 , CSS3 , JavaScript
+                        </p>
+                        <a target="_blank" href="https://github.com/khalidbouychou/humble" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+    
                 </div>
                 </div>
 
@@ -89,7 +132,25 @@
     </section>
 
     <!-- Contact section-->
+    
+    <section class="getintouch" id="contact">
+        <h2 class="heading">Get in Touch </h2>
+        <div  style=" display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            
+            <p style="font-size: 2rem; justify-content:center;  align-self:center;">
+                Thank you for visiting my portfolio  <br>
+                I'm always open to new opportunities and collaborations!
+            </p>
+            <div class="socila-media">
+                 <a target="_blank" href="https://www.linkedin.com/in/khalidbouychou/"><i class="fa-brands fa-linkedin"></i></a>
+                <a target="_blank" href="https://github.com/khalidbouychou"><i class="fa-brands fa-github"></i></a>
+                <a target="_blank" href="https://medium.com/@khbouych"><i class="fa-brands fa-medium"></i></a>
+            </div>
+        </div>
+    </section>
+    
     <section class="contact" id="contact">
+    
         <h2 class="heading">Contact <span>Me</span> </h2>
         <form action="#">
             <div class="input-box">
@@ -104,8 +165,23 @@
             <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required=""></textarea> 
             <input type="submit" value="Send Message" class="btn">            
         </form>
-    </section>"
+    </section>
 
-<script src="main.js"></script>
+    
+
+    <!-- footer section-->
+    <footer class="footer" >
+        <div class="footer-text">
+            <p>Copyright &copy; 2025 by @Khalid Bouychou | All Rights Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="main.js"></script>
 </body>
 </html>
