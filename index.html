@@ -3,185 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--styles css-->
-    <link rel="stylesheet" href="styles.css">
-    <!--Font awsome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>KB</title>
+    <title>Khalid Bouychou - Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <style>
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .resume-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2c3e50;
+        }
+        
+        .name {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 1.3em;
+            color: #34495e;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.4;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .skill-category {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .skill-list {
+            color: #555;
+            font-size: 0.9em;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .job-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+        
+        .job-details {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        
+        .job-description {
+            color: #555;
+        }
+        
+        .job-description ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        
+        .job-description li {
+            margin-bottom: 5px;
+        }
+        
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .interest-tag {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .download-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .download-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        @media print {
+            .download-button {
+                display: none;
+            }
+            
+            body {
+                background: white;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <a href="#" class="logo">khbouych</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#portfolio">Projects</a>
-            <a href="#portfolio">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <!-- home section-->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hi , <span>there </span></h3>
-            <h1>I am Khalid Bouychou</h1>
-            <h3>And I'm  <span class="multiple-text"> Software Developer </span> </h3>
-            <p> 
-                at 1337-UM6P, <br>passionate about web development
-                Skilled in programming and collaboration, I am seeking a job opportunity <br>
-                or internship to gain industry experience
-            </p>
-            <div class="socila-media">
-                <a target="_blank" href="https://www.linkedin.com/in/khalidbouychou/"><i class="fa-brands fa-linkedin"></i></a>
-                <a target="_blank" href="https://github.com/khalidbouychou"><i class="fa-brands fa-github"></i></a>
-                <a target="_blank" href="https://medium.com/@khbouych"><i class="fa-brands fa-medium"></i></a>
-                <a target="_blank" href="https://www.upwork.com/freelancers/~0115a1e88250e486bd"><i class="fa-brands fa-upwork"></i></a>
-            </div>
-            <a href="resume/firstjob-cv.pdf" class="btn">Resume</a>
-        </div>
-        <div class="home-img">
-            <img src="images/me.png" alt="khalid bouychou">
-        </div>
-
-    </section>
-
-    <!-- portfolio section-->
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading"><span>Projects</span> </h2>
-        <div class="portfolio-container">
-            <div class="portfilio-box">
-                <img src="images/pong.webp" alt="ft_trancendance">
-                <div class="portfolio-layer">
-                    <h4>PongyGame(Fullstack web app)</h4>
-                    <p>
-                        Transcendence is a 42 school project, to learn about web developpement and SPA. The goal is to create a web app to play Pong, and socialize with other users
-                    </p>
-                    <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
-                        Technologies :  Docker , Reactjs , Css , Django , Python
-                    </p>
-                    <a target="_blank" href="https://github.com/khalidbouychou/ft_trancendance1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
-                </div>
-            </div>
-
-                <div class="portfilio-box">
-                    <img src="images/irc.jpeg" alt="ft_irc">
-                    <div class="portfolio-layer">
-                        <h4>IRC</h4>
-                        <p>
-                            The ft_irc project by 1337 School is an interesting undertaking exploring computer networking and communication protocols. As a part of the 1337 School curriculum, the project aims to challenge students to develop an IRC (Internet Relay Chat) server from scratch using C++
-                            
-                        </p>
-                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
-                            Technologies :  C++ , Socket
-                        </p>
-                        <a target="_blank" href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
-                </div>
-                </div>
-
-                <div class="portfilio-box">
-                    <img src="images/inception.png" alt="ft_irc">
-                    <div class="portfolio-layer">
-                        <h4>Inception</h4>
-                        <p>
-                            This is complete guide of inception project on this page you gonna learn what is docker container and what used for and why we
-                            need it and also learn how to use docker images and also create your own docker image from scratch
-                            
-                        </p>
-                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
-                            Technologies :  Docker , Shell , PHP
-                        </p>
-                        <a target="_blank" href="https://github.com/khalidbouychou/inception-1337" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
-
-                </div>
-                </div>
-
-                <div class="portfilio-box">
-                    <img src="images/cube.d.png" alt="cub3d">
-                    <div class="portfolio-layer">
-                        <h4>CUB3D</h4>
-                        <p>
-                            A 3D maze game built using raycasting, allowing players to navigate through a maze and collect items to win the game.
-                           
-                        </p>
-                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
-                            Technologies :  C , Raycasting
-                        </p>
-                        <a target="_blank" href="https://github.com/khalidbouychou/Cub3d"  class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
-
-                </div>
-                </div>
-
-                <div class="portfilio-box">
-                    <img src="images/portfolioo.png" alt="cub3d">
-                    <div class="portfolio-layer">
-                        <h4>Portfolio</h4>
-                        <p>
-                            A personal portfolio showcasing my work as a Software developer.
-                        </p>
-                        <p style="background-color: rgb(0,0,0,0.5); padding: 2rem;">
-                            Technologies :  HTML5 , CSS3 , JavaScript
-                        </p>
-                        <a target="_blank" href="https://github.com/khalidbouychou/humble" class="btn"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+    <a href="/resume/cv.pdf" class="download-button" onclick="downloadPDF()">📄 Download PDF</a>
     
-                </div>
-                </div>
-
+    <div class="resume-container">
+        <div class="header">
+            <div class="name">KHALID BOUYCHOU</div>
+            <div class="title">Software Engineer</div>
+            <div class="contact-info">
+                📧 khalidbouychouu@gmail.com | 📱 +212612274405<br>
+                🌐 khbouych.vercel.app | 💻 github.com/khalidbouychou | 💼 linkedin.com/in/khalidbouychou
             </div>
         </div>
-    </section>
 
-    <!-- Contact section-->
-    
-    <section class="getintouch" id="contact">
-        <h2 class="heading">Get in Touch </h2>
-        <div  style=" display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-category">Programming Languages</div>
+                    <div class="skill-list">C, C++, JavaScript, TypeScript, Python</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-category">Libraries/Frameworks</div>
+                    <div class="skill-list">React, Next.js, Node.js, Django, Express.js</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-category">Databases</div>
+                    <div class="skill-list">PostgreSQL, Prisma, Redis, Django ORM</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-category">Tools/Platforms</div>
+                    <div class="skill-list">Git, GitHub, Unix CLI, Docker, Postman, Trello, CI/CD</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-category">Protocols</div>
+                    <div class="skill-list">MCP, FTP, SMTP, SSH</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-category">LLMs/AI Tools</div>
+                    <div class="skill-list">ChatGPT, Claude, Gemini, Replit, GitHub Copilot, N8N</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Experience</div>
             
-            <p style="font-size: 2rem; justify-content:center;  align-self:center;">
-                Thank you for visiting my portfolio  <br>
-                I'm always open to new opportunities and collaborations!
-            </p>
-            <div class="socila-media">
-                 <a target="_blank" href="https://www.linkedin.com/in/khalidbouychou/"><i class="fa-brands fa-linkedin"></i></a>
-                <a target="_blank" href="https://github.com/khalidbouychou"><i class="fa-brands fa-github"></i></a>
-                <a target="_blank" href="https://medium.com/@khbouych"><i class="fa-brands fa-medium"></i></a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="contact" id="contact">
-    
-        <h2 class="heading">Contact <span>Me</span> </h2>
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email">
+            <div class="experience-item">
+                <div class="job-title">Software Engineer @ <span class="company">Mobiblanc</span></div>
+                <div class="job-details">Full-time | March 2025 - Present | Casablanca | Remote</div>
+                <div class="job-description">
+                    <strong>Role:</strong>
+                    <ul>
+                        <li>Built a web app named <strong>TawfirCai</strong>, a smart investment platform with advanced tech, flexible API, and personalized advice to transform the banking experience.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="input-box">
-                <input type="number" placeholder="Phone Number">
-                <input type="text" placeholder="Subject">
+            <div class="experience-item">
+                <div class="job-title">IT Specialist @ <span class="company">Medidis</span></div>
+                <div class="job-details">Full-time | September 2021 - May 2022 | Kenitra | On-site</div>
+                <div class="job-description">
+                    <strong>Tasks:</strong>
+                    <ul>
+                        <li>Managed hardware and software procurement, installation, and maintenance.</li>
+                        <li>Developed customized widgets on <strong>Cegid</strong> using HTML5, CSS, and JavaScript.</li>
+                        <li>Organized training programs to upskill employees on new technologies.</li>
+                    </ul>
+                </div>
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required=""></textarea> 
-            <input type="submit" value="Send Message" class="btn">            
-        </form>
-    </section>
 
-    
+            <div class="experience-item">
+                <div class="job-title">Full Stack Developer @ <span class="company">Ekulya</span></div>
+                <div class="job-details">Full-time | May 2021 - October 2021 | Kenitra | Hybrid</div>
+                <div class="job-description">
+                    <strong>Tasks:</strong>
+                    <ul>
+                        <li>Developed responsive user interfaces.</li>
+                        <li>Built interactive web applications using the <strong>MERN</strong> stack (MongoDB, Express.js, React, Node.js).</li>
+                        <li>Built and maintained RESTful APIs with <strong>Django</strong>, <strong>Node.js</strong>, and <strong>Express.js</strong>.</li>
+                    </ul>
+                </div>
+            </div>
 
-    <!-- footer section-->
-    <footer class="footer" >
-        <div class="footer-text">
-            <p>Copyright &copy; 2025 by @Khalid Bouychou | All Rights Reserved</p>
+            <div class="experience-item">
+                <div class="job-title">Agent Mailer @ <span class="company">E-markets Solution</span></div>
+                <div class="job-details">Full-time | March 2020 - August 2020 | Kenitra | Remote</div>
+                <div class="job-description">
+                    <strong>Tasks:</strong>
+                    <ul>
+                        <li>Designed and personalized email templates using HTML5 and CSS.</li>
+                        <li>Analyzed email engagement metrics.</li>
+                        <li>Promoted newsletter subscriptions.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="footer-iconTop">
-            <a href="#home">
-                <i class="fa-solid fa-arrow-up"></i>
-            </a>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            
+            <div class="education-item">
+                <div class="job-title">Computer Engineering Student</div>
+                <div class="job-details">1337-UM6P Khouribga | Present</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="job-title">DTS in Computer Development</div>
+                <div class="job-details">OFPPT Kenitra | 2018 - 2021</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="job-title">High School Degree</div>
+                <div class="job-details">Al-Qods Kenitra | 2017</div>
+            </div>
         </div>
-    </footer>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="main.js"></script>
+
+        <div class="section">
+            <div class="section-title">Interests</div>
+            <div class="interests">
+                <div class="interest-tag">LLMs</div>
+                <div class="interest-tag">Agent AI</div>
+                <div class="interest-tag">Generative AI</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
