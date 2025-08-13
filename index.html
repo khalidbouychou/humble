@@ -3,320 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khalid Bouychou - Resume</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
-    <style>
-        @media print {
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .resume-container {
-            max-width: 210mm;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #2c3e50;
-        }
-        
-        .name {
-            font-size: 2.2em;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-        
-        .title {
-            font-size: 1.3em;
-            color: #34495e;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .contact-info {
-            font-size: 0.95em;
-            color: #555;
-            line-height: 1.4;
-        }
-        
-        .section {
-            margin-bottom: 25px;
-        }
-        
-        .section-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #3498db;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-        }
-        
-        .skill-item {
-            background: #f8f9fa;
-            padding: 8px 12px;
-            border-radius: 5px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .skill-category {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        
-        .skill-list {
-            color: #555;
-            font-size: 0.9em;
-        }
-        
-        .experience-item, .education-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #e74c3c;
-        }
-        
-        .job-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        
-        .company {
-            font-weight: 600;
-            color: #e74c3c;
-        }
-        
-        .job-details {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 10px;
-            font-size: 0.9em;
-        }
-        
-        .job-description {
-            color: #555;
-        }
-        
-        .job-description ul {
-            margin: 8px 0;
-            padding-left: 20px;
-        }
-        
-        .job-description li {
-            margin-bottom: 5px;
-        }
-        
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .interest-tag {
-            background: #3498db;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-        
-        .download-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #3498db;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .download-button:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-        }
-        
-        @media print {
-            .download-button {
-                display: none;
-            }
-            
-            body {
-                background: white;
-            }
-            
-            .resume-container {
-                box-shadow: none;
-                margin: 0;
-                padding: 0;
-            }
-        }
-    </style>
+    <title>Khalid Bouychou - Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <a href="/resume/cv.pdf" class="download-button" onclick="downloadPDF()">📄 Download PDF</a>
-    
-    <div class="resume-container">
-        <div class="header">
-            <div class="name">KHALID BOUYCHOU</div>
-            <div class="title">Software Engineer</div>
-            <div class="contact-info">
-                📧 khalidbouychouu@gmail.com | 📱 +212612274405<br>
-                🌐 khbouych.vercel.app | 💻 github.com/khalidbouychou | 💼 linkedin.com/in/khalidbouychou
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="#">Khalid Bouychou</a></h1>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h2 class="animate-fade-in">Hi, I'm Khalid Bouychou</h2>
+                <p class="animate-slide-up">A passionate Software Engineer</p>
+                <a href="#contact" class="btn animate-scale-in">Get In Touch</a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <p>As a Software Engineer, I am dedicated to building innovative web applications and solutions. My journey in technology has equipped me with a diverse skill set in programming languages, frameworks, and tools.</p>
+                <p>I thrive on tackling complex challenges and constantly learning new technologies to deliver high-quality, impactful projects.</p>
+            </div>
+        </section>
+
+        <!-- Timeline Work Experience -->
+        <section id="experience" class="timeline-section">
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item left animate-on-scroll">
+                        <div class="timeline-content">
+                            <h3>Software Engineer @Mobiblanc</h3>
+                            <p class="date">March 2025 - Current | Casablanca | Remote</p>
+                            <p>Role: Build a web app named TAWFIR.ai, a smart investment platform with advanced tech, flexible API, and personalized advice to transform the banking experience.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right animate-on-scroll">
+                        <div class="timeline-content">
+                            <h3>IT Specialist @MEDIDIS</h3>
+                            <p class="date">September 2021 - May 2022 | Kenitra | On-Site</p>
+                            <ul>
+                                <li>Managed hardware and software procurement, installation, and maintenance.</li>
+                                <li>Developed customized widgets on Cegid (HTML5, CSS3, Javascript).</li>
+                                <li>Organized training programs to up-skill employees on new technologies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="timeline-item left animate-on-scroll">
+                        <div class="timeline-content">
+                            <h3>FullStack Developer @Ekoulya</h3>
+                            <p class="date">May 2021 - Oct 2021 | Kenitra | Hybrid</p>
+                            <ul>
+                                <li>Developed responsive user interfaces.</li>
+                                <li>Built interactive web applications using MERN.</li>
+                                <li>Built and maintained RESTful APIs (Django, Nodejs/Expressjs).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item right animate-on-scroll">
+                        <div class="timeline-content">
+                            <h3>Agent Mailer @E-marketsolution</h3>
+                            <p class="date">Mar 2020 - Aug 2020 | Kenitra | Remote</p>
+                            <ul>
+                                <li>Designed and personalized email templates (HTML5, CSS3).</li>
+                                <li>Analyzed email engagement.</li>
+                                <li>Promoted newsletter subscriptions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline of Education -->
+        <section id="education" class="timeline-section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item left animate-on-scroll">
+                        <div class="timeline-content">
+                            <h3>Computer Engineering Student @1337-UM6P</h3>
+                            <p class="date">2022 - Present | Khouribga</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right animate-on-scroll">
+                        <div class="timeline-content">
+                            <h3>DTS in Computer Development @OFPPT</h3>
+                            <p class="date">2018 - 2021 | Kenitra</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left animate-on-scroll">
+                        <div class="timeline-content">
+                            <h3>High School degree @AlQodss</h3>
+                            <p class="date">2017 | Kenitra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Autoplay Carousel (Skills Icons) -->
+        <section id="skills" class="skills-carousel-section">
+            <div class="container">
+                <h2 class="section-title">My Tech Stack & Tools</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Duplicate content for seamless looping -->
+                        <div class="carousel-item"><i class="fab fa-react" title="React.js"></i><span>React.js</span></div>
+                        <div class="carousel-item"><i class="fas fa-code" title="Express.js"></i><span>Express.js</span></div>
+                        <div class="fab fa-python" title="Django"></i><span>Django</span></div>
+                        <div class="carousel-item"><i class="fas fa-database" title="MongoDB"></i><span>MongoDB</span></div>
+                        <div class="carousel-item"><i class="fas fa-database" title="PostgreSQL"></i><span>PostgreSQL</span></div>
+                        <div class="carousel-item"><i class="fas fa-paint-roller" title="Tailwind CSS"></i><span>Tailwind CSS</span></div>
+                        <div class="carousel-item"><i class="fab fa-git-alt" title="Git"></i><span>Git</span></div>
+                        <div class="carousel-item"><i class="fab fa-jira" title="Jira"></i><span>Jira</span></div>
+                        <div class="carousel-item"><i class="fab fa-trello" title="Trello"></i><span>Trello</span></div>
+                        <div class="carousel-item"><i class="fab fa-docker" title="Docker"></i><span>Docker</span></div>
+                        <div class="carousel-item"><i class="fab fa-node-js" title="Node.js"></i><span>Node.js</span></div>
+                        <div class="carousel-item"><i class="fas fa-code" title="TypeScript"></i><span>TypeScript</span></div>
+                        <div class="carousel-item"><i class="fab fa-html5" title="HTML5"></i><span>HTML5</span></div>
+                        <div class="carousel-item"><i class="fab fa-css3-alt" title="CSS3"></i><span>CSS3</span></div>
+                        <div class="carousel-item"><i class="fab fa-js" title="JavaScript"></i><span>JavaScript</span></div>
+
+                        <!-- Repeat for seamless loop -->
+                        <div class="carousel-item"><i class="fab fa-react" title="React.js"></i><span>React.js</span></div>
+                        <div class="carousel-item"><i class="fas fa-code" title="Express.js"></i><span>Express.js</span></div>
+                        <div class="fab fa-python" title="Django"></i><span>Django</span></div>
+                        <div class="carousel-item"><i class="fas fa-database" title="MongoDB"></i><span>MongoDB</span></div>
+                        <div class="carousel-item"><i class="fas fa-database" title="PostgreSQL"></i><span>PostgreSQL</span></div>
+                        <div class="carousel-item"><i class="fas fa-paint-roller" title="Tailwind CSS"></i><span>Tailwind CSS</span></div>
+                        <div class="carousel-item"><i class="fab fa-git-alt" title="Git"></i><span>Git</span></div>
+                        <div class="carousel-item"><i class="fab fa-jira" title="Jira"></i><span>Jira</span></div>
+                        <div class="carousel-item"><i class="fab fa-trello" title="Trello"></i><span>Trello</span></div>
+                        <div class="carousel-item"><i class="fab fa-docker" title="Docker"></i><span>Docker</span></div>
+                        <div class="carousel-item"><i class="fab fa-node-js" title="Node.js"></i><span>Node.js</span></div>
+                        <div class="carousel-item"><i class="fas fa-code" title="TypeScript"></i><span>TypeScript</span></div>
+                        <div class="carousel-item"><i class="fab fa-html5" title="HTML5"></i><span>HTML5</span></div>
+                        <div class="carousel-item"><i class="fab fa-css3-alt" title="CSS3"></i><span>CSS3</span></div>
+                        <div class="carousel-item"><i class="fab fa-js" title="JavaScript"></i><span>JavaScript</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Services Section (Cards) -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">My Services</h2>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/100" alt="Web Application Icon"> <!-- Replace with actual icon/image -->
+                        <h3>Web Application Development</h3>
+                        <p>Building responsive, user-friendly, and robust web applications tailored to your needs, from front-end interfaces to back-end logic.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/100" alt="Digital Marketing Icon"> <!-- Replace with actual icon/image -->
+                        <h3>Digital Marketing Solutions</h3>
+                        <p>Designing and implementing strategies for online presence, including email campaigns, engagement analysis, and newsletter promotion.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/100" alt="AI Solutions Icon"> <!-- Replace with actual icon/image -->
+                        <h3>AI Solutions & Integration</h3>
+                        <p>Leveraging AI technologies like LLMs, Agent AI, and Generative AI to create intelligent solutions and enhance existing systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get In Touch Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-content">
+                    <div class="social-media">
+                        <h3>Connect with me:</h3>
+                        <a href="https://github.com/khalidbouychou" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://linkedin.com/in/khalidbouychou" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="mailto:khalidbouychouu@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="tel:+212612274405"><i class="fas fa-phone"></i> Phone</a>
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Send me a message:</h3>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                        <p class="form-note">Note: This form requires a backend setup (e.g., Node.js, Python, PHP) to send emails.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2023 Khalid Bouychou. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/khalidbouychou" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/khalidbouychou" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:khalidbouychouu@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
+    </footer>
 
-        <div class="section">
-            <div class="section-title">Skills</div>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-category">Programming Languages</div>
-                    <div class="skill-list">C, C++, JavaScript, TypeScript, Python</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-category">Libraries/Frameworks</div>
-                    <div class="skill-list">React, Next.js, Node.js, Django, Express.js</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-category">Databases</div>
-                    <div class="skill-list">PostgreSQL, Prisma, Redis, Django ORM</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-category">Tools/Platforms</div>
-                    <div class="skill-list">Git, GitHub, Unix CLI, Docker, Postman, Trello, CI/CD</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-category">Protocols</div>
-                    <div class="skill-list">MCP, FTP, SMTP, SSH</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-category">LLMs/AI Tools</div>
-                    <div class="skill-list">ChatGPT, Claude, Gemini, Replit, GitHub Copilot, N8N</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Experience</div>
-            
-            <div class="experience-item">
-                <div class="job-title">Software Engineer @ <span class="company">Mobiblanc</span></div>
-                <div class="job-details">Full-time | March 2025 - Present | Casablanca | Remote</div>
-                <div class="job-description">
-                    <strong>Role:</strong>
-                    <ul>
-                        <li>Built a web app named <strong>TawfirCai</strong>, a smart investment platform with advanced tech, flexible API, and personalized advice to transform the banking experience.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-title">IT Specialist @ <span class="company">Medidis</span></div>
-                <div class="job-details">Full-time | September 2021 - May 2022 | Kenitra | On-site</div>
-                <div class="job-description">
-                    <strong>Tasks:</strong>
-                    <ul>
-                        <li>Managed hardware and software procurement, installation, and maintenance.</li>
-                        <li>Developed customized widgets on <strong>Cegid</strong> using HTML5, CSS, and JavaScript.</li>
-                        <li>Organized training programs to upskill employees on new technologies.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-title">Full Stack Developer @ <span class="company">Ekulya</span></div>
-                <div class="job-details">Full-time | May 2021 - October 2021 | Kenitra | Hybrid</div>
-                <div class="job-description">
-                    <strong>Tasks:</strong>
-                    <ul>
-                        <li>Developed responsive user interfaces.</li>
-                        <li>Built interactive web applications using the <strong>MERN</strong> stack (MongoDB, Express.js, React, Node.js).</li>
-                        <li>Built and maintained RESTful APIs with <strong>Django</strong>, <strong>Node.js</strong>, and <strong>Express.js</strong>.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-title">Agent Mailer @ <span class="company">E-markets Solution</span></div>
-                <div class="job-details">Full-time | March 2020 - August 2020 | Kenitra | Remote</div>
-                <div class="job-description">
-                    <strong>Tasks:</strong>
-                    <ul>
-                        <li>Designed and personalized email templates using HTML5 and CSS.</li>
-                        <li>Analyzed email engagement metrics.</li>
-                        <li>Promoted newsletter subscriptions.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Education</div>
-            
-            <div class="education-item">
-                <div class="job-title">Computer Engineering Student</div>
-                <div class="job-details">1337-UM6P Khouribga | Present</div>
-            </div>
-            
-            <div class="education-item">
-                <div class="job-title">DTS in Computer Development</div>
-                <div class="job-details">OFPPT Kenitra | 2018 - 2021</div>
-            </div>
-            
-            <div class="education-item">
-                <div class="job-title">High School Degree</div>
-                <div class="job-details">Al-Qods Kenitra | 2017</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Interests</div>
-            <div class="interests">
-                <div class="interest-tag">LLMs</div>
-                <div class="interest-tag">Agent AI</div>
-                <div class="interest-tag">Generative AI</div>
-            </div>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
